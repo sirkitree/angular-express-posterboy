@@ -1,0 +1,11 @@
+div.span5
+  div(ng-repeat='post in posts | orderBy:id:reverse', class='well')
+    span.controls
+      a(href='deletePost/{{post.id}}', class='close', title='delete') &times;
+      a(href='editPost/{{post.id}}', class='pull-right', title='edit')
+        i.icon-edit
+    div {{post.text}}
+    a(href='readPost/{{post.id}}') More
+
+div.span4
+  include addPost

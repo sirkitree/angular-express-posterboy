@@ -1,0 +1,7 @@
+div.well {{post.text}}
+pre
+  | Are you sure you want to delete this post?
+  p
+    button(ng-click='deletePost()', class='btn btn-danger') Yes
+    &nbsp;
+    button(ng-click='home()', class='btn') No thanks
