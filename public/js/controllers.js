@@ -20,6 +20,9 @@ function IndexCtrl($scope, $http, $location) {
       });
   };
 
+  $scope.expand = function() {
+    $('#postbox').autosize({append: "\n"});
+  };
 }
 
 function AddPostCtrl($scope, $http, $location) {

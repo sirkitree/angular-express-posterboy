@@ -60,3 +60,11 @@ span.controls a {
   left: 420px;
   top: 10px;
 }
+
+#postbox {
+  vertical-align: top;
+  transition: height 0.2s;
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+  height: 50px;
+}
