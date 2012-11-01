@@ -28,4 +28,14 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
         redirectTo: '/'
       });
     $locationProvider.html5Mode(true);
-  }]);
+  }]).
+  value('ui.config', {
+   // The ui-jq directive namespace
+   jq: {
+      // The Autosize namespace
+      autosize: {
+         // Autosize options. This object will be used as the defaults
+         append: "\n"
+      }
+   }
+});;
