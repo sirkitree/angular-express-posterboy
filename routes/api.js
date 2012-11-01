@@ -12,7 +12,8 @@ exports.posts = function (req, res) {
   data.posts.forEach(function (post, i) {
     posts.push({
       id: i,
-      text: post.text.substr(0, 50) + '...'
+      text: post.text.substr(0, 50),
+      remains: post.text.substr(50)
     });
   });
   res.json({

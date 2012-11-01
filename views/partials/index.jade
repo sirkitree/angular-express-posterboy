@@ -8,8 +8,12 @@ div.span5
           a(href='deletePost/{{post.id}}', class='close', title='delete') &times;
           a(href='editPost/{{post.id}}', class='pull-right', title='edit')
             i.icon-edit
-        div {{post.text}}
-        a(href='readPost/{{post.id}}') More
+        div(class='message-text msg-{{post.id}}')
+          {{post.text}}
+          a(href='javascript://', class='msg-expand', ng-click='msgExpand(post)') expand »
+          span(class='msg-remains', ui-animate)
+              {{post.remains}}
+          a(href='javascript://', class='msg-collapse', ng-click='msgCollapse(post)') « collapse
 
 div(class='span4', ui-scrollfix='-10')
   include addPost

@@ -110,3 +110,12 @@ span.controls a {
   border-radius: 3px;
   margin-bottom: 5px;
 }
+.msg-remains,
+.msg-collapse {
+  display: none;
+}
+.msg-expand,
+.msg-collapse {
+  font-size: 12px;
+  padding: 5px;
+}

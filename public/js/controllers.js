@@ -20,6 +20,19 @@ function IndexCtrl($scope, $http, $location) {
       });
     $('#postbox').val('').height('50px');
   };
+
+  $scope.msgExpand = function(post) {
+    $('.msg-' + post.id + ' a.msg-expand').hide();
+    $('.msg-' + post.id + ' span.msg-remains').show();
+    $('.msg-' + post.id + ' a.msg-collapse').show();
+  }
+
+  $scope.msgCollapse = function(post) {
+    $('.msg-' + post.id + ' span.msg-remains').hide();
+    $('.msg-' + post.id + ' a.msg-expand').show();
+    $('.msg-' + post.id + ' a.msg-collapse').hide();
+  }
+
 }
 
 function AddPostCtrl($scope, $http, $location) {
@@ -49,7 +62,7 @@ function EditPostCtrl($scope, $http, $location, $routeParams) {
   $scope.editPost = function() {
     $http.put('/api/post/' + $routeParams.id, $scope.form).
       success(function(data) {
-        $location.url('/readPost/' + $routeParams.id);
+        $location.url('/' + $routeParams.id);
       });
   };
 }
