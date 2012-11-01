@@ -11,7 +11,7 @@ div.span5
         div(class='message-text msg-{{post.id}}')
           {{post.text}}
           a(href='javascript://', class='msg-expand', ng-click='msgExpand(post)') expand »
-          span(class='msg-remains', ui-animate)
+          span(class='msg-remains')
               {{post.remains}}
           a(href='javascript://', class='msg-collapse', ng-click='msgCollapse(post)') « collapse
 
