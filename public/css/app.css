@@ -68,3 +68,27 @@ span.controls a {
   -moz-transition: height 0.2s;
   height: 50px;
 }
+
+.msg-container {
+  position: relative;
+  padding-left: 60px;
+  padding-right: 5px;
+  zoom: 1;
+}
+.avatar {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  text-align: center;
+  zoom: 1;
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+}
+.default-avatar {
+  border-radius: 3px;
+}
+.message {
+  margin-bottom: 3px;
+  word-wrap: break-word;
+}
