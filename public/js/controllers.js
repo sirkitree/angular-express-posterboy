@@ -18,7 +18,7 @@ function IndexCtrl($scope, $http, $location) {
             $scope.posts = data.posts.reverse();
           });
       });
-    $('#postbox').val('');
+    $('#postbox').val('').height('50px');
   };
 }
 
