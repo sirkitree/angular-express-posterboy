@@ -20,20 +20,6 @@ function IndexCtrl($scope, $http, $location) {
       });
   };
 
-  // @todo: Expand the textarea when the size is too small.
-  $scope.expand = function() {
-    console.log($scope);
-    var textarea = $scope.form.text;
-    console.log(textarea.length);
-    // if (textarea.length > 5){
-    //   textarea.cols = 50;
-    //   textarea.rows = 50;
-    // }  else{
-    //    textarea.cols = 10;
-    //    textarea.rows = 15;
-    // }
-  }
-
 }
 
 function AddPostCtrl($scope, $http, $location) {

@@ -1,4 +1,4 @@
 form(class='navbar-form pull-left')
-  textarea(ng-model='form.text', ng-change='expand()', class='span4', type='text', placeholder='Whatcha workin on?')
+  textarea(ng-model='form.text', class='span4', type='text', placeholder='Whatcha workin on?', ui-reset)
   p
     button(ng-click='submitPost()', class='btn btn-primary pull-right', type='submit') Post
