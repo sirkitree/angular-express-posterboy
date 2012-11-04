@@ -11,11 +11,9 @@ marked = require('marked');
 exports.posts = function (req, res) {
   var posts = [];
   data.posts.forEach(function (post, i) {
-    post.text = marked(post.text);
     posts.push({
       id: i,
-      text: post.text.substr(0, 50),
-      remains: post.text.substr(50)
+      text: marked(post.text)
     });
   });
   res.json({

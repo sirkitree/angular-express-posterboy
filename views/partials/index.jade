@@ -10,9 +10,7 @@ div.span5
             i.icon-edit
         div(class='message-text msg-{{post.id}}')
           span(class='msg-preview', ng-bind-html-unsafe="post.text|convert")
-          a(href='javascript://', class='msg-expand', ng-click='msgExpand(post)') expand »
-          span(class='msg-remains', ng-bind-html-unsafe="post.remains|convert")
-          a(href='javascript://', class='msg-collapse', ng-click='msgCollapse(post)') « collapse
+          a(href='javascript://', class='msg-expand', ng-click='msgExpand(post)')
 
 div(class='span4', ui-scrollfix='-10')
   include previewPost
