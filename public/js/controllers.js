@@ -19,6 +19,7 @@ function IndexCtrl($scope, $http, $location) {
           });
       });
     $('#postbox').val('').height('50px');
+    $('#markdown-preview').html('');
   };
 
   $scope.msgExpand = function(post) {
