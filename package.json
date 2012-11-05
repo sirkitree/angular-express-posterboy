@@ -1,10 +1,17 @@
 {
-    "name": "application-name"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "3.0.0"
-    , "jade": ">= 0.0.1"
-    , "marked": "0.2.5"
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.0.0",
+    "jade": ">= 0.0.1",
+    "marked": "0.2.5"
+  },
+  "subdomain": "sirkitree.angular-express-posterboy",
+  "scripts": {
+    "start": "app.js"
+  },
+  "engines": {
+    "node": "0.6.x"
   }
 }
