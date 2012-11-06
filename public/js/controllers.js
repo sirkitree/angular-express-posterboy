@@ -54,6 +54,7 @@ function EditPostCtrl($scope, $http, $location, $routeParams) {
         $location.url('/' + $routeParams.id);
       });
   };
+
 }
 
 function DeletePostCtrl($scope, $http, $location, $routeParams) {
