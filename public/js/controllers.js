@@ -22,18 +22,6 @@ function IndexCtrl($scope, $http, $location) {
     $('#markdown-preview').html('');
   };
 
-  $scope.msgExpand = function(post) {
-    $('.msg-' + post.id + ' a.msg-expand').hide();
-    $('.msg-' + post.id + ' span.msg-remains').animate({opacity: 100}, 500).css('display', 'inline');
-    $('.msg-' + post.id + ' a.msg-collapse').show();
-  }
-
-  $scope.msgCollapse = function(post) {
-    $('.msg-' + post.id + ' span.msg-remains').animate({opacity: 0}, 0).css('display', 'block');
-    $('.msg-' + post.id + ' a.msg-expand').show();
-    $('.msg-' + post.id + ' a.msg-collapse').hide();
-  }
-
 }
 
 function AddPostCtrl($scope, $http, $location) {
