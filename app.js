@@ -35,6 +35,7 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
+app.get('/captcha.png', routes.captcha);
 
 // JSON API
 
