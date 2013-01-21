@@ -33,9 +33,21 @@ exports.post = function (req, res) {
 };
 
 // POST
-exports.addPost = function(req, res) {
-  data.posts.push(req.body);
-  res.json(req.body);
+exports.addPost = function(req, res, next) {
+  console.log(req.session);
+  // var theirCaptcha = req.body.captcha;
+  // if (!theirCaptcha) {
+  //   return next("Missing captcha input");
+  // }
+  // if (theirCaptcha == req.session.captcha) {
+  //   delete req.session.captcha;
+  //   req.session.isHuman = true;
+  //   data.posts.push(req.body.text);
+  //   res.json(req.body.text);
+  // } else {
+  //   delete req.session.isHuman = false;
+  //   res.end('invalid captcha');
+  // }
 };
 
 // PUT

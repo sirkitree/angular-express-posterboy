@@ -12,9 +12,11 @@ exports.partials = function(req, res) {
   res.render('partials/' + name);
 };
 
-exports.captcha = function(req, res) {
+exports.captcha = function(req, res, next) {
   var c = require('captchagen'),
   captcha = c.generate();
+  console.log(req.session);
+  // req.session.captcha = captcha.text();
   res.type('image/png');
-  res.end(captcha.buffer());
+  res.send(captcha.buffer());
 };
