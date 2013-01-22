@@ -12,14 +12,29 @@ function IndexCtrl($scope, $http, $location) {
   $scope.submitPost = function() {
     $http.post('/api/post', $scope.form).
       success(function(data) {
+
+        // We always want to reset the captcha, but if the previous entry was invalid,
+        // we should NOT reset the postbox and markdown-preview.
+        if (data.captcha !== false) {
+          // empty the postbox
+          $('#postbox').val('').height('50px');
+          // reset the preview
+          $('#markdown-preview').html('');
+        }
+
         $location.path('/');
         $http.get('/api/posts').
           success(function(data, status, headers, config) {
             $scope.posts = data.posts.reverse();
           });
       });
-    $('#postbox').val('').height('50px');
-    $('#markdown-preview').html('');
+
+    // reset the captcha image
+    $('#captcha-image').remove();
+    $('#captcha-input').before('<img src="/captcha.png" id="captcha-image"></img>');
+    // reset the captcha input
+    $('#captcha-input').val('');
+
   };
 
 }

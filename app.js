@@ -19,8 +19,11 @@ app.configure(function(){
   });
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser('your secret here'));
+  app.use(express.session());
   app.use(express.static(__dirname + '/public'));
   app.use(app.router);
+
 });
 
 app.configure('development', function(){
@@ -35,6 +38,7 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
+app.get('/captcha.png', routes.captcha);
 
 // JSON API
 
