@@ -54,7 +54,9 @@ exports.addPost = function(req, res, next) {
     req.session.isHuman = false;
 
     // notify user that catcha is invalid
-    res.end('invalid captcha');
+    // should give the option to NOT remove message from #postbox
+    data.captcha = 'invalid';
+    res.json({captcha: false});
   }
 };
 
