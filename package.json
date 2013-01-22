@@ -1,18 +1,17 @@
 {
   "name": "posterboy",
-  "version": "0.0.1-3",
-  "private": true,
-  "dependencies": {
-    "express": "3.0.6",
-    "jade": ">= 0.0.1",
-    "marked": "0.2.5",
-    "captchagen": "0.0.2"
-  },
-  "subdomain": "sirkitree.angular-express-posterboy",
   "scripts": {
     "start": "app.js"
   },
+  "version": "0.0.1-3",
   "engines": {
     "node": "0.6.x"
+  },
+  "subdomain": "sirkitree.angular-express-posterboy.sirkitree",
+  "dependencies": {
+    "express": "3.0.x",
+    "jade": ">= 0.0.1",
+    "marked": "0.2.5",
+    "captchagen": "0.0.2"
   }
 }
