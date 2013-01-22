@@ -1,6 +1,7 @@
-include previewPost
+
 form(class='navbar-form pull-left')
   textarea(ng-model='form.text', id='postbox', class='span4', type='text', placeholder='Whatcha workin on?', ui-jq='autosize')
+  include previewPost
   p
     img(src='/captcha.png', id='captcha-image')
     input(ng-model='form.captcha', type='text', id='captcha-input')
