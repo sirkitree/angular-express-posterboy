@@ -33,12 +33,6 @@
   padding-left: 5px;
 }
 
-.ui-scrollfix {
-  position: fixed;
-  left: 420px;
-  top: 10px;
-}
-
 #postbox {
   vertical-align: top;
   transition: height 0.2s;
