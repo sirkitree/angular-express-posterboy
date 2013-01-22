@@ -14,9 +14,9 @@ exports.partials = function(req, res) {
 
 exports.captcha = function(req, res, next) {
   var c = require('captchagen'),
-  captcha = c.generate();
-  console.log(req.session);
-  // req.session.captcha = captcha.text();
+  captcha = c.generate(),
+  sess = req.session;
+  sess.captcha = captcha.text();
   res.type('image/png');
-  res.send(captcha.buffer());
+  res.end(captcha.buffer());
 };

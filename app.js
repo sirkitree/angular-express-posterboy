@@ -19,8 +19,11 @@ app.configure(function(){
   });
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser('your secret here'));
+  app.use(express.session());
   app.use(express.static(__dirname + '/public'));
   app.use(app.router);
+
 });
 
 app.configure('development', function(){
@@ -35,17 +38,6 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
-
-// Session code referenced from express 3.0 example:
-// https://github.com/visionmedia/express/blob/master/examples/session/index.js
-
-// Required by session() middleware
-// pass the secret for signed cookies
-// (required by session())
-app.use(express.cookieParser('icn'));
-
-// Populates req.session
-app.use(express.session());
 app.get('/captcha.png', routes.captcha);
 
 // JSON API

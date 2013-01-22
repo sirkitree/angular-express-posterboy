@@ -18,8 +18,14 @@ function IndexCtrl($scope, $http, $location) {
             $scope.posts = data.posts.reverse();
           });
       });
+    // empty the postbox
     $('#postbox').val('').height('50px');
+    // reset the preview
     $('#markdown-preview').html('');
+    // reset the captcha image
+    $('#captcha-image').remove();
+    // reset the captcha input
+    $('#captcha-input').val('').before('<img src="/captcha.png" id="captcha-image"></img>');
   };
 
 }
