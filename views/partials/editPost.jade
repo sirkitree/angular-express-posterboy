@@ -1,6 +1,6 @@
 div.span6
-  include previewPost
   form(class='navbar-form pull-left')
     textarea(ng-model='form.text', id='postbox', class='span6', type='text')
+    include previewPost
     p
       button(ng-click='editPost()', class='btn btn-primary pull-right') Edit Post
