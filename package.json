@@ -3,11 +3,11 @@
   "scripts": {
     "start": "app.js"
   },
-  "version": "0.0.1-3",
+  "version": "0.0.1-5",
   "engines": {
     "node": "0.6.x"
   },
-  "subdomain": "sirkitree.angular-express-posterboy.sirkitree",
+  "subdomain": "sirkitree.angular-express-posterboy",
   "dependencies": {
     "express": "3.0.x",
     "jade": ">= 0.0.1",

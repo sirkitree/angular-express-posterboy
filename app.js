@@ -11,20 +11,24 @@ var app = module.exports = express();
 
 // Configuration
 
-app.configure(function(){
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.set('view options', {
-    layout: false
-  });
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(express.cookieParser('your secret here'));
-  app.use(express.session());
-  app.use(express.static(__dirname + '/public'));
-  app.use(app.router);
+app.configure(appConfig);
+function appConfig() {
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'jade');
+    app.set('view options', {
+        layout:false
+    });
+    express.bodyParser = function () {
 
-});
+    };
+    app.use(express.bodyParser());
+    app.use(express.methodOverride());
+    app.use(express.cookieParser('your secret here'));
+    app.use(express.session());
+    app.use(express.static(__dirname + '/public'));
+    app.use(app.router);
+
+}
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
