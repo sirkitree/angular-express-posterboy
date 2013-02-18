@@ -13,14 +13,10 @@ function IndexCtrl($scope, $http, $location) {
     $http.post('/api/post', $scope.form).
       success(function(data) {
 
-        // We always want to reset the captcha, but if the previous entry was invalid,
-        // we should NOT reset the postbox and markdown-preview.
-        if (data.captcha !== false) {
-          // empty the postbox
-          $('#postbox').val('').height('50px');
-          // reset the preview
-          $('#markdown-preview').html('');
-        }
+        // empty the postbox
+        $('#postbox').val('').height('50px');
+        // reset the preview
+        $('#markdown-preview').html('');
 
         $location.path('/');
         $http.get('/api/posts').
@@ -28,12 +24,6 @@ function IndexCtrl($scope, $http, $location) {
             $scope.posts = data.posts.reverse();
           });
       });
-
-    // reset the captcha image
-    $('#captcha-image').remove();
-    $('#captcha-input').before('<img src="/captcha.png" id="captcha-image"></img>');
-    // reset the captcha input
-    $('#captcha-input').val('');
 
   };
 

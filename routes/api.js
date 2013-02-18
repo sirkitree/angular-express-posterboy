@@ -34,30 +34,9 @@ exports.post = function (req, res) {
 
 // POST
 exports.addPost = function(req, res, next) {
-  console.log(req.session);
-  // the user's answer
-  var theirCaptcha = req.body.captcha;
-  if (!theirCaptcha) {
-    return next("Missing captcha input");
-  }
-  if (theirCaptcha == req.session.captcha) {
-    // valid human
-    delete req.session.captcha;
-    req.session.isHuman = true;
-
-    // push to posts
-    data.posts.push(req.body);
-    res.json(req.body);
-  } else {
-    // invalid human
-    delete req.session.isHuman;
-    req.session.isHuman = false;
-
-    // notify user that catcha is invalid
-    // should give the option to NOT remove message from #postbox
-    data.captcha = 'invalid';
-    res.json({captcha: false});
-  }
+  // push to posts
+  data.posts.push(req.body);
+  res.json(req.body);
 };
 
 // PUT
